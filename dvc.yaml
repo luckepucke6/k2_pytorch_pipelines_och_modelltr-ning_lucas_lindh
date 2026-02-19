@@ -1,0 +1,15 @@
+stages:
+
+  train:
+    cmd: uv run main.py
+
+    deps:
+    - main.py
+    - src/dataset.py
+    - src/model.py
+    - src/train.py
+    - src/evaluate.py
+    - params.yml
+
+    outs:
+    - model.pt
