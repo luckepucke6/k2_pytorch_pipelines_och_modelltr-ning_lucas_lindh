@@ -1,0 +1,14 @@
+[project]
+name = "k2-pytorch-pipelines-och-modelltr-ning-lucas-lindh"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dvc>=3.66.1",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.0",
+    "pyyaml>=6.0.3",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+]
