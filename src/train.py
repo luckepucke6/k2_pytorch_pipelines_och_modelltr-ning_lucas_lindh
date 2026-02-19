@@ -51,6 +51,6 @@ def train(model, dataloader, device, epochs=5, lr=0.001):
         # Beräknar medelfelet för hela epochen. Running loss = totala felet av alla batchers fel, och len(dataloader) är antalet batcher
         avg_loss = running_loss / len(dataloader)
 
-        print(f"Epoch [{epoch+1}/{epoch}] - Loss: {avg_loss:.4f}")
+        print(f"Epoch [{epoch+1}/{epochs}] - Loss: {avg_loss:.4f}")
 
-        print("Träning avklarad")
+    print("Träning avklarad")
