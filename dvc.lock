@@ -9,8 +9,8 @@ stages:
       size: 1433
     - path: params.yaml
       hash: md5
-      md5: b2bbef6771a56f0164c6f07c72ab893c
-      size: 59
+      md5: 6a88c02c32240b02305e92155ac7e2c6
+      size: 60
     - path: src/dataset.py
       hash: md5
       md5: 02c3f1011d3d7d7238efce2c1243bf34
@@ -30,9 +30,9 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: 941752ca29a4e73108bb943263d55d46
+      md5: 6823ce9b849bcddd7401f320a65f39cf
       size: 20
     - path: model.pt
       hash: md5
-      md5: 1b9bba04026d9e7ccbc8feb6da0358b8
+      md5: a92510e49846cd00a3cd56d2c826de56
       size: 1077681
