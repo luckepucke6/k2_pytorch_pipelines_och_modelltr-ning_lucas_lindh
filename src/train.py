@@ -7,7 +7,7 @@ def train(model, dataloader, device, epochs=5, lr=0.001):
     Docstring for train
     
     model: MyModel
-    dataloader: training DataLoader
+    dataloader: training DataLoader (dataloader = delar upp datasetet i mindre bitar och levererar dem en batch i taget till träningen)
     device: cpu eller cuda
     epochs: antal varv genom datasetet
     lr: learning rate

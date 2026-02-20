@@ -23,7 +23,3 @@ class MyDataset(Dataset):
         image, label = self.dataset[idx]
         return image, label
 
-
-dataset = MyDataset()
-print(dataset.__len__())
-print(dataset.__getitem__(0))

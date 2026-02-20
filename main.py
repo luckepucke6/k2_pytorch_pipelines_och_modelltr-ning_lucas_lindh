@@ -1,25 +1,21 @@
 import torch
+import yaml
 from torch.utils.data import DataLoader
 from src.dataset import MyDataset
 from src.model import MyModel
 from src.train import train
+from src.evaluate import evaluate
 
 def main():
-    # test_dataset = MyDataset(train=False)
 
-    # train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+    # Läser hyperparametrar
+    with open("params.yaml", "r") as f:
+        params = yaml.safe_load(f)
 
-    # for images, labels in train_loader:
-    #     print("Images shape:", images.shape)
-    #     print("Labels shape:", labels.shape)
-    #     break
-    
-    # x = torch.randn(32, 3, 32, 32)
+    batch_size = params["train"]["batch_size"]
+    epochs = params["train"]["epochs"]
+    learning_rate = params["train"]["learning_rate"]
 
-    # output = model(x)
-
-    # print("Output shape: ", output.shape)
-    
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Datasetet
@@ -28,7 +24,7 @@ def main():
     # Dataloader
     train_loader = DataLoader(
         train_dataset,
-        batch_size=32,
+        batch_size=batch_size,
         shuffle=True
     )
     
@@ -40,9 +36,23 @@ def main():
         model=model,
         dataloader=train_loader,
         device=device,
-        epochs=10,
-        lr=0.001
+        epochs=epochs,
+        lr=learning_rate
     )
+
+    # Validering
+    val_dataset = MyDataset(train=False)
+
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=batch_size,
+        shuffle=False
+    )
+
+    # Evaluate
+    accuracy = evaluate(model, val_loader, device)
+
+    print("Validation accuracy:", accuracy)
 
 if __name__ == "__main__":
     main()
