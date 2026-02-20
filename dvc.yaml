@@ -10,7 +10,6 @@ stages:
     - src/train.py
     - src/evaluate.py
     - params.yaml
-    - data/
 
     outs:
     - model.pt
