@@ -9,7 +9,11 @@ stages:
     - src/model.py
     - src/train.py
     - src/evaluate.py
-    - params.yml
+    - params.yaml
+    - data/
 
     outs:
     - model.pt
+
+    metrics:
+    - metrics.json

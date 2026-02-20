@@ -1,5 +1,6 @@
 import torch
 import yaml
+import json
 from torch.utils.data import DataLoader
 from src.dataset import MyDataset
 from src.model import MyModel
@@ -53,6 +54,12 @@ def main():
     accuracy = evaluate(model, val_loader, device)
 
     print("Validation accuracy:", accuracy)
+    
+    with open("metrics.json", "w") as f:
+        json.dump({"accuracy": accuracy}, f)
+    
+    torch.save(model.state_dict(), "model.pt")
+    print("Model saved as model.pt")
 
 if __name__ == "__main__":
     main()

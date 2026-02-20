@@ -14,7 +14,8 @@ def train(model, dataloader, device, epochs=5, lr=0.001):
     """
 
     # Sätter modellen i träningsläge
-    model.train()
+    for epoch in range(epochs):
+        model.train()
 
     # Loss funktion, beräknar felet
     criterion = nn.CrossEntropyLoss()

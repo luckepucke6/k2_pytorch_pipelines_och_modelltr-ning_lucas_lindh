@@ -12,7 +12,7 @@ class MyDataset(Dataset):
         self.dataset = datasets.CIFAR10(
             root="data", # Vart datasetet sparas
             train=train, # training data
-            download=True, # gör så att det laddas ner automatiskt
+            download=False, # gör så att det laddas ner automatiskt
             transform=self.transform
         )
 
