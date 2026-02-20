@@ -3,23 +3,18 @@ stages:
   train:
     cmd: uv run main.py
     deps:
-    - path: data/
-      hash: md5
-      md5: fbf62af9bb59b34dcae1d89672f350fc.dir
-      size: 186222310
-      nfiles: 9
     - path: main.py
       hash: md5
       md5: 99f66c49f704da79afebaa500e8c920c
       size: 1433
     - path: params.yaml
       hash: md5
-      md5: f738d0141006c798a86ecde6d284e6ed
+      md5: b2bbef6771a56f0164c6f07c72ab893c
       size: 59
     - path: src/dataset.py
       hash: md5
-      md5: cc6385a4295a3e698f126aec51ede516
-      size: 758
+      md5: 02c3f1011d3d7d7238efce2c1243bf34
+      size: 757
     - path: src/evaluate.py
       hash: md5
       md5: d4e130a7411f175401ee88d28f3e088b
@@ -35,9 +30,9 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: a83b832332a1bf4582dc54e24cf58523
+      md5: 941752ca29a4e73108bb943263d55d46
       size: 20
     - path: model.pt
       hash: md5
-      md5: 14961f381a58817e502784588d0dfc15
+      md5: 1b9bba04026d9e7ccbc8feb6da0358b8
       size: 1077681
